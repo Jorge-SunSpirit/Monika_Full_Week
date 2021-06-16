@@ -222,11 +222,23 @@ class CreditDevMenu extends MusicBeatState
 					FlxG.openURL('https://twitter.com/TokyoGalaxyOG');
 					#end
 				case 'aether':
-					#if linux
-					Sys.command('/usr/bin/xdg-open', ["https://twitter.com/AetherDX", "&"]);
-					#else
-					FlxG.openURL('https://twitter.com/AetherDX');
-					#end
+					if (FlxG.keys.pressed.G)
+						{
+							#if linux
+							Sys.command('/usr/bin/xdg-open', ["https://www.youtube.com/watch?v=EHAj5-u8qpc", "&"]);
+							#else
+							FlxG.openURL('https://www.youtube.com/watch?v=EHAj5-u8qpc');
+							#end
+						}
+					else
+						{
+							#if linux
+							Sys.command('/usr/bin/xdg-open', ["https://twitter.com/AetherDX", "&"]);
+							#else
+							FlxG.openURL('https://twitter.com/AetherDX');
+							#end
+						}
+
 				case 'Cval':
 					#if linux
 					Sys.command('/usr/bin/xdg-open', ["https://twitter.com/cval_brown", "&"]);
@@ -259,9 +271,9 @@ class CreditDevMenu extends MusicBeatState
 					#end
 				case 'new':
 					#if linux
-					Sys.command('/usr/bin/xdg-open', ["https://www.youtube.com/watch?v=0MW9Nrg_kZU", "&"]);
+					Sys.command('/usr/bin/xdg-open', ["https://www.youtube.com/kallionic", "&"]);
 					#else
-					FlxG.openURL('https://www.youtube.com/watch?v=0MW9Nrg_kZU');
+					FlxG.openURL('https://www.youtube.com/kallionic');
 					#end
 			}
 		}
