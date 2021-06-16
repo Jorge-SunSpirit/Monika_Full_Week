@@ -65,10 +65,20 @@ class Note extends FlxSprite
 			case 'pixel':
 				loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels','week6'), true, 17, 17);
 
-				animation.add('greenScroll', [6]);
-				animation.add('redScroll', [7]);
-				animation.add('blueScroll', [5]);
-				animation.add('purpleScroll', [4]);
+				if (noteType == 2)
+					{
+						animation.add('greenScroll', [22]);
+						animation.add('redScroll', [23]);
+						animation.add('blueScroll', [21]);
+						animation.add('purpleScroll', [20]);
+					}
+				else
+					{
+						animation.add('greenScroll', [6]);
+						animation.add('redScroll', [7]);
+						animation.add('blueScroll', [5]);
+						animation.add('purpleScroll', [4]);
+					}
 
 				if (isSustainNote)
 				{
