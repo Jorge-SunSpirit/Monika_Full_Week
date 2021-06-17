@@ -666,7 +666,7 @@ class PlayState extends MusicBeatState
 					space.scrollFactor.set(0.1, 0.1);
 					space.scale.set(1.65, 1.65);
 
-					var bg:FlxSprite = new FlxSprite(posX, posY).loadGraphic(Paths.image('weeb/FinaleBG_2','week6'));
+					var bg:FlxSprite = new FlxSprite(70, posY).loadGraphic(Paths.image('weeb/FinaleBG_2','week6'));
 					bg.antialiasing = false;
 					bg.scale.set(2.3, 2.3);
 					bg.scrollFactor.set(0.4, 0.6);
@@ -2309,7 +2309,7 @@ class PlayState extends MusicBeatState
 						camFollow.x = dad.getMidpoint().x + 0;
 					case 'monika-angry':
 						camFollow.y = dad.getMidpoint().y - 390;
-						camFollow.x = dad.getMidpoint().x - 250;
+						camFollow.x = dad.getMidpoint().x - 350;
 						
 				}
 
@@ -2769,16 +2769,22 @@ class PlayState extends MusicBeatState
 					transIn = FlxTransitionableState.defaultTransIn;
 					transOut = FlxTransitionableState.defaultTransOut;
 
-					if (SONG.song.toLowerCase() == 'your demise') {
-						FlxG.switchState(new CreditsMenu());
-						FlxG.save.data.monikabeaten = true;
-					} else {
-						FlxG.switchState(new StoryMenuState());
+					switch (FlxG.save.data.monikabeaten)
+					{
+						case true:
+							{
+								FlxG.switchState(new StoryMenuState());
+							}
+						case false:
+							{
+								if (SONG.song.toLowerCase() == 'your demise') {
+									FlxG.switchState(new OutdatedSubState());
+									FlxG.save.data.monikabeaten = true;
+								} else {
+									FlxG.switchState(new StoryMenuState());
+								}
+							}
 					}
-
-		
-
-				
 
 					#if windows
 					if (luaModchart != null)
