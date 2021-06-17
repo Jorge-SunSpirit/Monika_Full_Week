@@ -2879,14 +2879,21 @@ class PlayState extends MusicBeatState
 			switch(daRating)
 			{
 					case 'shit':
-						score = -300;
-						combo = 0;
-						misses++;
-						health -= 0.2;
-						ss = false;
-						shits++;
-						if (FlxG.save.data.accuracyMod == 0)
-							totalNotesHit += 0.25;
+						if (daNote.noteType == 2)
+							{
+								health -= 100;
+							}
+						else
+							{
+								score = -300;
+								combo = 0;
+								misses++;
+								health -= 0.2;
+								ss = false;
+								shits++;
+								if (FlxG.save.data.accuracyMod == 0)
+									totalNotesHit += 0.25;
+							}
 					case 'bad':
 						if (daNote.noteType == 2)
 							{
