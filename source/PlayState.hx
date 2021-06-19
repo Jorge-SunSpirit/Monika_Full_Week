@@ -3319,12 +3319,25 @@ class PlayState extends MusicBeatState
 								//trace('ReplayNote ' + tmpRepNote.strumtime + ' | ' + tmpRepNote.direction);
 								if(rep.replay.songNotes.contains(HelperFunctions.truncateFloat(daNote.strumTime, 2)))
 								{
-									goodNoteHit(daNote);
-									boyfriend.holdTimer = daNote.sustainLength;
+									if (daNote.noteType == 2)
+										{
+										}
+									else
+										{
+											goodNoteHit(daNote);
+											boyfriend.holdTimer = daNote.sustainLength;
+										}
+									
 								}
 							}else {
-								goodNoteHit(daNote);
-								boyfriend.holdTimer = daNote.sustainLength;
+								if (daNote.noteType == 2)
+									{
+									}
+								else
+									{
+										goodNoteHit(daNote);
+										boyfriend.holdTimer = daNote.sustainLength;
+									}
 							}
 						}
 					}
