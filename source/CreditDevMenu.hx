@@ -36,13 +36,13 @@ class CreditDevMenu extends MusicBeatState
 	var fixdiff:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['duster', 'Tokyo', 'aether', 'Cval', 'Jorge', 'celeste', 'new'];
+	var optionShit:Array<String> = ['duster', 'Tokyo', 'aether', 'Jorge', 'celeste', 'new'];
 	#else
 	var optionShit:Array<String> = ['duster'];
 	#end
 
 	#if !switch
-	var creditshit:Array<String> = ['icond', 'icont', 'icona', 'iconcv', 'iconj', 'iconc', 'iconnew'];
+	var creditshit:Array<String> = ['icond', 'icont', 'icona', 'iconj', 'iconc', 'iconnew'];
 	#else
 	var creditshit:Array<String> = ['icond'];
 	#end
@@ -237,14 +237,7 @@ class CreditDevMenu extends MusicBeatState
 							#else
 							FlxG.openURL('https://twitter.com/AetherDX');
 							#end
-						}
-
-				case 'Cval':
-					#if linux
-					Sys.command('/usr/bin/xdg-open', ["https://twitter.com/cval_brown", "&"]);
-					#else
-					FlxG.openURL('https://twitter.com/cval_brown');
-					#end	
+						}	
 				case 'Jorge':
 					if (FlxG.keys.pressed.G)
 						{
@@ -282,10 +275,10 @@ class CreditDevMenu extends MusicBeatState
 		{
 			curSelected += huh;
 
-			if (curSelected >= 7)
+			if (curSelected >= 6)
 				curSelected = 0;
 			if (curSelected < 0)
-				curSelected = 7 - 1;
+				curSelected = 6 - 1;
 				
 			menuItems.forEach(function(spr:FlxSprite)
 			{

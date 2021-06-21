@@ -36,7 +36,7 @@ class CreditsSpecialMenu extends MusicBeatState
 	var fixdiff:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['ash','blantados', 'dan', 'kade', 'lumitic', 'zee'];
+	var optionShit:Array<String> = ['ash','blantados','Cval','dan','foomfs','kade','lumitic','matt', 'zee'];
 	#else
 	var optionShit:Array<String> = ['lumi'];
 	#end
@@ -104,7 +104,7 @@ class CreditsSpecialMenu extends MusicBeatState
 
 		for (i in 0...optionShit.length)
 		{
-			var menuItem:FlxSprite = new FlxSprite(40, 390  + (i * 40));
+			var menuItem:FlxSprite = new FlxSprite(40, 350  + (i * 35));
 			menuItem.frames = tex;
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
@@ -225,6 +225,24 @@ class CreditsSpecialMenu extends MusicBeatState
 					#else
 					FlxG.openURL('https://twitter.com/Zeexel32');
 					#end	
+				case 'Cval':
+					#if linux
+					Sys.command('/usr/bin/xdg-open', ["https://twitter.com/cval_brown", "&"]);
+					#else
+					FlxG.openURL('https://twitter.com/cval_brown');
+					#end
+				case 'foomfs':
+					#if linux
+					Sys.command('/usr/bin/xdg-open', ["https://twitter.com/foomfs", "&"]);
+					#else
+					FlxG.openURL('https://twitter.com/foomfs');
+					#end
+				case 'matt':
+					#if linux
+					Sys.command('/usr/bin/xdg-open', ["https://twitter.com/matt_currency", "&"]);
+					#else
+					FlxG.openURL('https://twitter.com/matt_currency');
+					#end
 			}
 		}
 
@@ -232,10 +250,10 @@ class CreditsSpecialMenu extends MusicBeatState
 		{
 			curSelected += huh;
 
-			if (curSelected >= 6)
+			if (curSelected >= 9)
 				curSelected = 0;
 			if (curSelected < 0)
-				curSelected = 6 - 1;
+				curSelected = 9 - 1;
 				
 			menuItems.forEach(function(spr:FlxSprite)
 			{
