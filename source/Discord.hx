@@ -39,8 +39,8 @@ class DiscordClient
 		DiscordRpc.presence({
 			details: "In the Menus",
 			state: null,
-			largeImageKey: 'rich_presence_logo',
-			largeImageText: "Friday Night Funkin': Monika Full Week",
+			largeImageKey: 'rpc_logo',
+			largeImageText: "Friday Night Funkin': Monika Full Week Rebooted!",
 		});
 	}
 
@@ -75,8 +75,8 @@ class DiscordClient
 		DiscordRpc.presence({
 			details: details,
 			state: state,
-			largeImageKey: 'rich_presence_logo',
-			largeImageText: "Friday Night Funkin': Monika Full Week",
+			largeImageKey: 'rpc_logo',
+			largeImageText: "Friday Night Funkin': Monika Full Week Rebooted!",
 			smallImageKey : smallImageKey,
 			// Obtained times are in milliseconds so they are divided so Discord can use it
 			startTimestamp : Std.int(startTimestamp / 1000),
