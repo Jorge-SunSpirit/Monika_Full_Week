@@ -369,9 +369,9 @@ class PlayState extends MusicBeatState
 		    case 'high school conflict':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('high school conflict/high-school-conflictDialogue'));
 				extra3 = CoolUtil.coolTextFile(Paths.txt('high school conflict/high-school-conflictEndDialogue')); 
-			case 'erb':
-				extra1 = CoolUtil.coolTextFile(Paths.txt('erb/erb-Dialogue'));
-				extra3 = CoolUtil.coolTextFile(Paths.txt('erb/erb-EndDialogue')); 
+			case 'bara no yume':
+				extra1 = CoolUtil.coolTextFile(Paths.txt('bara no yume/bara no yume-Dialogue'));
+				extra3 = CoolUtil.coolTextFile(Paths.txt('bara no yume/bara no yume-EndDialogue')); 
 			case 'your demise':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('your demise/your-demiseDialogue'));
 				extra2 = CoolUtil.coolTextFile(Paths.txt('your demise/your-demiseEndDialogue'));
@@ -631,7 +631,7 @@ class PlayState extends MusicBeatState
 					bgTrees.updateHitbox();
 					treeLeaves.updateHitbox();
 
-					if (SONG.song.toLowerCase() == "erb")
+					if (SONG.song.toLowerCase() == "bara no yume")
 					{
 						bgGirls = new BackgroundGirls(-600, 190);
 						bgGirls.scrollFactor.set(0.9, 0.9);
@@ -1065,7 +1065,7 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'high school conflict':
 					schoolIntro(doof);
-				case 'erb':
+				case 'bara no yume':
 					schoolIntro(doof2);
 				case 'your demise':
 					if (showCutscene)
@@ -1312,7 +1312,7 @@ class PlayState extends MusicBeatState
 		red.scrollFactor.set();
 
 
-		if (SONG.song.toLowerCase() == 'erb')
+		if (SONG.song.toLowerCase() == 'bara no yume')
 		{
 			dad.playAnim('cutsceneidle');
 			remove(black);
@@ -2347,7 +2347,7 @@ class PlayState extends MusicBeatState
 							case "your reality":
 								camFollow.x = boyfriend.getMidpoint().x - 500;
 								camFollow.y = boyfriend.getMidpoint().y - 600;
-							case "erb":
+							case "bara no yume":
 								camFollow.x = boyfriend.getMidpoint().x - 300;
 								camFollow.y = boyfriend.getMidpoint().y - 200;
 							default:
@@ -2696,7 +2696,7 @@ class PlayState extends MusicBeatState
 				{
 					case 'high school conflict':
 						roseend(doof4);
-					case 'erb':
+					case 'bara no yume':
 						roseend(doof4);
 					case 'your demise':
 						demiseend(doof3);
@@ -3821,7 +3821,7 @@ class PlayState extends MusicBeatState
 				dad.playAnim('cheer', true);
 			}
 
-		if (SONG.song.toLowerCase() == "erb")
+		if (SONG.song.toLowerCase() == "bara no yume")
 			bgGirls.dance();
 
 		switch (curStage)

@@ -78,7 +78,7 @@ class DialogueBox extends FlxSpriteGroup
 					box.frames = Paths.getSparrowAtlas('weeb/pixelUI/dialogueBox-monika');
 					box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
 					box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
-			case 'erb':
+			case 'bara no yume':
 					hasDialog = true;
 					FlxG.sound.play(Paths.sound('ANGRY_TEXT_BOX'));
 					box.frames = Paths.getSparrowAtlas('weeb/pixelUI/dialogueBox-monika');
@@ -113,7 +113,7 @@ class DialogueBox extends FlxSpriteGroup
 		if (!hasDialog)
 			return;
 
-		if (PlayState.SONG.song.toLowerCase()=='high school conflict' || PlayState.SONG.song.toLowerCase()=='erb' || PlayState.SONG.song.toLowerCase()=='your demise')
+		if (PlayState.SONG.song.toLowerCase()=='high school conflict' || PlayState.SONG.song.toLowerCase()=='bara no yume' || PlayState.SONG.song.toLowerCase()=='your demise')
 			{
 		portraitLeft = new FlxSprite(-20, 40);
 		portraitLeft.frames = Paths.getSparrowAtlas('weeb/monika');
