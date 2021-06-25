@@ -1,4 +1,4 @@
-![Logo](https://i.imgur.com/otUNyyo.png) 
+![Logo](https://ayetsg.github.io/img/MonikaRebooted.png) 
 ## Built on **[Kade Engine](https://github.com/KadeDev/Kade-Engine)**
 
 # Original Game Links
@@ -21,6 +21,7 @@ DDLC Links: **[DDLC Official Webiste](http://ddlc.moe) ⋅ [itch.io page](https:
 - [Lumitic](https://twitter.com/PeacefulLuma) - Mad lad that actually knows how to code and helped with the project.
 - [Zeexel32](https://twitter.com/Zeexel32) - Some general bug fixes/coding help.
 - [foomfs](https://twitter.com/foomfs) - Thumbnail Design 
+- [Matt$](https://twitter.com/matt_currency) - Remastering Monika Vocals
 
 ### Friday Night Funkin'
  - [ninjamuffin99](https://twitter.com/ninja_muffin99) - Programming
