@@ -10,7 +10,7 @@ DDLC Links: **[DDLC Official Webiste](http://ddlc.moe) ⋅ [itch.io page](https:
 # Credits
 
 ### Monika Full Week
-- [AetherDX](https://twitter.com/AetherDX), [Cval](https://twitter.com/cval_brown) and [Jorge_SunSpirit](https://twitter.com/Jorge_SunSpirit) - Programming
+- [AetherDX](https://twitter.com/AetherDX) and [Jorge_SunSpirit](https://twitter.com/Jorge_SunSpirit) - Programming
 - [SirDusterBuster](https://twitter.com/SirDusterBuster) and [TokyoGalaxyOG](https://twitter.com/TokyoGalaxyOG) - Art
 - [CelShader](https://www.youtube.com/channel/UCm3eGs2etEOMzRX0iQ4QzqQ) and [Kallionic](https://youtube.com/kallionic) - Music
 
@@ -22,6 +22,7 @@ DDLC Links: **[DDLC Official Webiste](http://ddlc.moe) ⋅ [itch.io page](https:
 - [Zeexel32](https://twitter.com/Zeexel32) - Some general bug fixes/coding help.
 - [foomfs](https://twitter.com/foomfs) - Thumbnail Design 
 - [Matt$](https://twitter.com/matt_currency) - Remastering Monika Vocals
+- [Cval](https://twitter.com/cval_brown) - Charting "Bara no Yume"
 
 ### Friday Night Funkin'
  - [ninjamuffin99](https://twitter.com/ninja_muffin99) - Programming
