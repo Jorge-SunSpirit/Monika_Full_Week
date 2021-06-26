@@ -190,6 +190,32 @@ class MainMenuState extends MusicBeatState
 					});
 			}
 		}
+		function goToState()
+			{
+				var daChoice:String = optionShit[curSelected];
+		
+				switch (daChoice)
+				{
+					case 'transrights':
+						if (FlxG.keys.pressed.G)
+							{
+								//Hueh keeping this forever
+								#if linux
+								Sys.command('/usr/bin/xdg-open', ["https://www.youtube.com/watch?v=0MW9Nrg_kZU", "&"]);
+								#else
+								FlxG.openURL('https://www.youtube.com/watch?v=0MW9Nrg_kZU');
+								#end
+							}
+						else
+							{
+								#if linux
+								Sys.command('/usr/bin/xdg-open', ["https://twitter.com/Jorge_SunSpirit", "&"]);
+								#else
+								FlxG.openURL('https://twitter.com/Jorge_SunSpirit');
+								#end
+							}
+				}
+			}
 
 		super.update(elapsed);
 
