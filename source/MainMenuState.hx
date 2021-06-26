@@ -246,41 +246,6 @@ class MainMenuState extends MusicBeatState
 					});
 			}
 		}
-		/*
-		function goToState()
-			{
-				var daChoice:String = optionShit[curSelected];
-		
-				switch (daChoice)
-				{
-					case 'transrights':
-						if (FlxG.keys.pressed.G)
-							{
-								var transbg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuTransRights'));
-								transbg.scrollFactor.x = 0;
-								transbg.scrollFactor.y = 0.15;
-								transbg.setGraphicSize(Std.int(transbg.width * 1.1));
-								transbg.updateHitbox();
-								transbg.screenCenter();
-								transbg.antialiasing = true;
-								add(transbg);						
-							}	
-					case 'friends':
-						if (FlxG.keys.pressed.H)
-							{
-								var friendsbg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBGFriends'));
-								friendsbg.scrollFactor.x = 0;
-								friendsbg.scrollFactor.y = 0.15;
-								friendsbg.setGraphicSize(Std.int(friendsbg.width * 1.1));
-								friendsbg.updateHitbox();
-								friendsbg.screenCenter();
-								friendsbg.antialiasing = true;
-								add(friendsbg);						
-							}	
-									
-				}
-			}
-		*/
 		super.update(elapsed);
 
 		menuItems.forEach(function(spr:FlxSprite)
