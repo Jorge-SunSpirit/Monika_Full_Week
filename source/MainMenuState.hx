@@ -199,12 +199,12 @@ class MainMenuState extends MusicBeatState
 
 			if (FlxG.keys.justPressed.O)
 				{
-					spr.animation.play('selected');
+					FlxG.sound.play(Paths.sound('scrollMenu'));
 					changebackground(-1);
 				}
 			if (FlxG.keys.justPressed.P)
 				{
-					spr.animation.play('selected');
+					FlxG.sound.play(Paths.sound('scrollMenu'));
 					changebackground(1);
 				}
 
