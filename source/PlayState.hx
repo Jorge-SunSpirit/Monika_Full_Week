@@ -2643,8 +2643,7 @@ class PlayState extends MusicBeatState
 						{
 							if (daNote.noteType == 2)
 								{
-									health += 0.04;
-									totalNotesHit += 1;
+									vocals.volume = 1;
 								}
 							else
 								{
