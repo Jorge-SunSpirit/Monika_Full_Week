@@ -10,7 +10,6 @@ https://gamebanana.com/mods/47364
 
 Programming: 
 AetherDX - https://twitter.com/AetherDX
-Cval - https://twitter.com/cval_brown
 Jorge_SunSpirit - https://twitter.com/Jorge_SunSpirit
 
 Art:
@@ -19,7 +18,7 @@ TokyoGalaxyOG - https://twitter.com/TokyoGalaxyOG
 
 Music:
 CelShader - https://www.youtube.com/channel/UCm3eGs2etEOMzRX0iQ4QzqQ
-Diffraktor - https://www.youtube.com/channel/UCOr5gnuCxjlj5XWyLgvOsSQ
+Kallionic - https://youtube.com/kallionic
 
 
 ===============
@@ -27,6 +26,7 @@ SPECIAL THANKS
 ===============
 Blantados did Vocals and Charting for "Your Reality"! - https://www.youtube.com/channel/UC4rwJYVeDHxGKnFDhHz88ZQ
 Ash implemented Alt animations per note and helped with adding the ending song cutscenes! - https://gamebanana.com/members/1813477
+Cval, Thank you for Charting the second song! - https://twitter.com/cval_brown
 Lumitic, the mad lad that actually knows how to code and helped with the project. - https://twitter.com/PeacefulLuma
 Zeexel32 really likes the fucking mcrib for some reason. - https://twitter.com/Zeexel32
 
