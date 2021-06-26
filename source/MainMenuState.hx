@@ -68,6 +68,7 @@ class MainMenuState extends MusicBeatState
 		bg.antialiasing = true;
 		add(bg);
 
+
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
 
@@ -199,21 +200,15 @@ class MainMenuState extends MusicBeatState
 					case 'transrights':
 						if (FlxG.keys.pressed.G)
 							{
-								//Hueh keeping this forever
-								#if linux
-								Sys.command('/usr/bin/xdg-open', ["https://www.youtube.com/watch?v=0MW9Nrg_kZU", "&"]);
-								#else
-								FlxG.openURL('https://www.youtube.com/watch?v=0MW9Nrg_kZU');
-								#end
-							}
-						else
-							{
-								#if linux
-								Sys.command('/usr/bin/xdg-open', ["https://twitter.com/Jorge_SunSpirit", "&"]);
-								#else
-								FlxG.openURL('https://twitter.com/Jorge_SunSpirit');
-								#end
-							}
+								var transbg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuTransRights'));
+								transbg.scrollFactor.x = 0;
+								transbg.scrollFactor.y = 0.15;
+								transbg.setGraphicSize(Std.int(transbg.width * 1.1));
+								transbg.updateHitbox();
+								transbg.screenCenter();
+								transbg.antialiasing = true;
+								add(transbg);						
+							}	
 				}
 			}
 
