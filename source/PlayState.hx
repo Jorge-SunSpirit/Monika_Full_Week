@@ -1098,6 +1098,7 @@ class PlayState extends MusicBeatState
 	function GFScary(?dialogueBox:DialogueBox):Void
 	{
 		camHUD.visible = false;
+		inCutscene = true;
 		var GFFakeout:FlxSprite = new FlxSprite();
 		GFFakeout.frames = Paths.getSparrowAtlas('GF_Fakeout_Cryemoji');
 		GFFakeout.animation.addByPrefix('idle', 'GFFakeout', 24, false);

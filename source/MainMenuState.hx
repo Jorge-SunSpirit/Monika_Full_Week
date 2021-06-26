@@ -286,21 +286,6 @@ class MainMenuState extends MusicBeatState
 				background = 0;
 			if (background < 0)
 				background = 3 - 1;
-			/*
-			menuItems.forEach(function(spr:FlxSprite)
-			{
-				spr.animation.play('idle');
-	
-				if (spr.ID == curSelected)
-				{
-					spr.animation.play('selected');
-					camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y);
-				}
-	
-				spr.updateHitbox();
-			});
-			*/
-
 		}
 		
 
