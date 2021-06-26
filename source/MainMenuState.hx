@@ -209,6 +209,19 @@ class MainMenuState extends MusicBeatState
 								transbg.antialiasing = true;
 								add(transbg);						
 							}	
+					case 'friends':
+						if (FlxG.keys.pressed.H)
+							{
+								var friendsbg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBGFriends'));
+								friendsbg.scrollFactor.x = 0;
+								friendsbg.scrollFactor.y = 0.15;
+								friendsbg.setGraphicSize(Std.int(friendsbg.width * 1.1));
+								friendsbg.updateHitbox();
+								friendsbg.screenCenter();
+								friendsbg.antialiasing = true;
+								add(friendsbg);						
+							}	
+									
 				}
 			}
 
