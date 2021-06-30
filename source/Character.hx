@@ -525,12 +525,14 @@ class Character extends FlxSprite
 				addOffset("singRIGHTmiss", 50, 200);
 				addOffset("singLEFTmiss", 90, 200);
 				addOffset("singDOWNmiss", 64, 200);
-				addOffset('firstDeath');
-				addOffset('deathLoop');
-				addOffset('deathConfirm');
+				addOffset('firstDeath', 50, -100);
+				addOffset('deathLoop', 50, -100);
+				addOffset('deathConfirm', 50, -100);
 	
 				setGraphicSize(Std.int(width * 6));
 				updateHitbox();
+
+				flipX = true;
 	
 				playAnim('idle');
 	

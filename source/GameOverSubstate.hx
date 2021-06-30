@@ -1,5 +1,7 @@
 package;
 
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSubState;
@@ -27,6 +29,7 @@ class GameOverSubstate extends MusicBeatSubstate
 				stageSuffix = '-pixel';
 				daBf = 'bf-pixel-dead';
 			case 'playablesenpai':
+				stageSuffix = '-senpai';
 				daBf = 'playablesenpai';
 			default:
 				daBf = 'bf';
@@ -50,6 +53,14 @@ class GameOverSubstate extends MusicBeatSubstate
 		// FlxG.camera.focusOn(FlxPoint.get(FlxG.width / 2, FlxG.height / 2));
 		FlxG.camera.scroll.set();
 		FlxG.camera.target = null;
+
+		if (bf.curCharacter == "playablesenpai") {
+			//FlxG.camera.zoom = FlxG.camera.zoom - 0.25;
+
+			FlxTween.tween(FlxG.camera, {zoom: FlxG.camera.zoom - 0.15}, 0.35, {
+				ease: FlxEase.quadOut
+			});
+		}
 
 		bf.playAnim('firstDeath');
 	}
