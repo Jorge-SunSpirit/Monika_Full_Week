@@ -28,7 +28,7 @@ class GameOverSubstate extends MusicBeatSubstate
 				daBf = 'bf-pixel-dead';
 			case 'playablesenpai':
 				stageSuffix = '-senpai';
-				daBf = 'bf-pixel-dead';
+				daBf = 'senpai-dead';
 			default:
 				daBf = 'bf';
 		}

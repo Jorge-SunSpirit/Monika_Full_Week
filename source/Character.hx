@@ -476,6 +476,23 @@ class Character extends FlxSprite
 				antialiasing = false;
 				flipX = true;
 
+			case 'senpai-dead':
+				frames = Paths.getSparrowAtlas('characters/deadsenpai');
+				animation.addByPrefix('singUP', "senpai Dies", 24, false);
+				animation.addByPrefix('firstDeath', "senpai Dies", 24, false);
+				animation.addByPrefix('deathLoop', "senpai retry", 24, true);
+				animation.addByPrefix('deathConfirm', "senpai CONFIRM", 24, false);
+				animation.play('firstDeath');
+
+				addOffset('firstDeath');
+				addOffset('deathLoop');
+				addOffset('deathConfirm');
+				playAnim('firstDeath');
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+				antialiasing = false;
+
 			case 'senpai':
 				frames = Paths.getSparrowAtlas('characters/senpai');
 				animation.addByPrefix('idle', 'Senpai Idle', 24, false);
