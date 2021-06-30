@@ -425,7 +425,7 @@ class Character extends FlxSprite
 				antialiasing = false;
 
 				flipX = true;
-				case 'bf-pixelangry':
+			case 'bf-pixelangry':
 					frames = Paths.getSparrowAtlas('characters/bfPixelangry');
 					animation.addByPrefix('idle', 'BF IDLE', 24, false);
 					animation.addByPrefix('singUP', 'BF UP NOTE', 24, false);
@@ -476,23 +476,6 @@ class Character extends FlxSprite
 				antialiasing = false;
 				flipX = true;
 
-			case 'senpai-dead':
-				frames = Paths.getSparrowAtlas('characters/deadsenpai');
-				animation.addByPrefix('singUP', "senpai Dies", 24, false);
-				animation.addByPrefix('firstDeath', "senpai Dies", 24, false);
-				animation.addByPrefix('deathLoop', "senpai retry", 24, true);
-				animation.addByPrefix('deathConfirm', "senpai CONFIRM", 24, false);
-				animation.play('firstDeath');
-
-				addOffset('firstDeath');
-				addOffset('deathLoop');
-				addOffset('deathConfirm');
-				playAnim('firstDeath');
-
-				setGraphicSize(Std.int(width * 6));
-				updateHitbox();
-				antialiasing = false;
-
 			case 'senpai':
 				frames = Paths.getSparrowAtlas('characters/senpai');
 				animation.addByPrefix('idle', 'Senpai Idle', 24, false);
@@ -525,7 +508,14 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFTmiss', 'miss Senpai LEFT NOTE', 24, false);
 				animation.addByPrefix('singRIGHTmiss', 'miss Senpai RIGHT NOTE', 24, false);
 				animation.addByPrefix('singDOWNmiss', 'miss Senpai DOWN NOTE', 24, false);
-	
+
+				animation.addByPrefix('firstDeath', "BF Dies pixel", 24, false);
+				animation.addByPrefix('deathLoop', "senpai retry", 24, true);
+				animation.addByPrefix('deathConfirm', "RETRY CONFIRM", 24, false);
+
+				//I'M TILTED I HAD T OMODIDFY SENPAI'S STUPD PECKIN SPRITE SHEET JUST SO HE DIES WITHOUT CRASHING THE GAME, IF I DIDN'T HAVE LUMATIC ON MY SIDE I WOULD OF LOST IT HOURS AGO SO THANK YOU STUPID CODE FOR NOT WORKING SMILE
+				//Lumatic says "Jorge and Senpai have a big forehead tho"
+
 				addOffset('idle', 50, 200);
 				addOffset("singUP", 55, 237);
 				addOffset("singRIGHT", 50, 200);
@@ -535,6 +525,9 @@ class Character extends FlxSprite
 				addOffset("singRIGHTmiss", 50, 200);
 				addOffset("singLEFTmiss", 90, 200);
 				addOffset("singDOWNmiss", 64, 200);
+				addOffset('firstDeath');
+				addOffset('deathLoop');
+				addOffset('deathConfirm');
 	
 				setGraphicSize(Std.int(width * 6));
 				updateHitbox();
@@ -644,7 +637,7 @@ class Character extends FlxSprite
 				antialiasing = false;
 			
 				//Duet_Assets
-				case 'duet':
+			case 'duet':
 				frames = Paths.getSparrowAtlas('characters/Duet_Assets');
 				animation.addByPrefix('idle', 'Duet Idle', 24, false);
 				animation.addByPrefix('singUP', 'Duet Monika UP NOTE', 24, false);

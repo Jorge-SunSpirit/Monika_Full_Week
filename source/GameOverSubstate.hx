@@ -27,8 +27,7 @@ class GameOverSubstate extends MusicBeatSubstate
 				stageSuffix = '-pixel';
 				daBf = 'bf-pixel-dead';
 			case 'playablesenpai':
-				stageSuffix = '-senpai';
-				daBf = 'senpai-dead';
+				daBf = 'playablesenpai';
 			default:
 				daBf = 'bf';
 		}
@@ -38,6 +37,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		Conductor.songPosition = 0;
 
 		bf = new Boyfriend(x, y, daBf);
+		trace(bf == null ? "bf if hella dumb" : "bf has a big forehead");
 		add(bf);
 
 		camFollow = new FlxObject(bf.getGraphicMidpoint().x, bf.getGraphicMidpoint().y, 1, 1);
@@ -106,7 +106,15 @@ class GameOverSubstate extends MusicBeatSubstate
 			isEnding = true;
 			bf.playAnim('deathConfirm', true);
 			FlxG.sound.music.stop();
-			FlxG.sound.play(Paths.music('gameOverEnd' + stageSuffix));
+			switch (PlayState.SONG.player1)
+				{
+					case 'playablesenpai':
+						FlxG.sound.play(Paths.music('gameOverEnd-senpai'));
+					default:
+						FlxG.sound.play(Paths.music('gameOverEnd' + stageSuffix));
+				}
+			//FlxG.sound.play(Paths.music('gameOverEnd' + stageSuffix));
+
 			new FlxTimer().start(0.7, function(tmr:FlxTimer)
 			{
 				FlxG.camera.fade(FlxColor.BLACK, 2, false, function()
