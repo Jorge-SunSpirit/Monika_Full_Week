@@ -8,7 +8,7 @@ import flixel.FlxG;
 import openfl.display.FPS;
 import openfl.Lib;
 
-class OptionCatagory
+class OptionCategory
 {
 	private var _options:Array<Option> = new Array<Option>();
 	public final function getOptions():Array<Option>
@@ -27,7 +27,7 @@ class OptionCatagory
 		_options.remove(opt);
 	}
 
-	private var _name:String = "New Catagory";
+	private var _name:String = "New Category";
 	public final function getName() {
 		return _name;
 	}
@@ -73,7 +73,7 @@ class Option
 
 
 
-class DFJKOption extends Option
+class KeyBindingsOption extends Option
 {
 	private var controls:Controls;
 
@@ -85,20 +85,13 @@ class DFJKOption extends Option
 
 	public override function press():Bool
 	{
-		FlxG.save.data.dfjk = !FlxG.save.data.dfjk;
-		
-		if (FlxG.save.data.dfjk)
-			controls.setKeyboardScheme(KeyboardScheme.Solo, true);
-		else
-			controls.setKeyboardScheme(KeyboardScheme.Duo(true), true);
-
-		display = updateDisplay();
-		return true;
+		OptionsMenu.instance.openSubState(new KeyBindMenu());
+		return false;
 	}
 
 	private override function updateDisplay():String
 	{
-		return  FlxG.save.data.dfjk ? "DFJK" : "WASD";
+		return "Key Bindings";
 	}
 }
 

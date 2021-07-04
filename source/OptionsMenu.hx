@@ -1,5 +1,6 @@
 package;
 
+import flixel.input.gamepad.FlxGamepad;
 import openfl.Lib;
 import Options;
 import Controls.Control;
@@ -16,12 +17,14 @@ import lime.utils.Assets;
 
 class OptionsMenu extends MusicBeatState
 {
+	public static var instance:OptionsMenu;
+
 	var selector:FlxText;
 	var curSelected:Int = 0;
 
-	var options:Array<OptionCatagory> = [
-		new OptionCatagory("Gameplay", [
-			new DFJKOption(controls),
+	var options:Array<OptionCategory> = [
+		new OptionCategory("Gameplay", [
+			new KeyBindingsOption(controls),
 			new DownscrollOption("Change the layout of the strumline."),
 			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
@@ -34,7 +37,7 @@ class OptionsMenu extends MusicBeatState
 			// new OffsetMenu("Get a note offset based off of your inputs!"),
 			new CustomizeGameplay("Drag'n'Drop Gameplay Modules around to your preference")
 		]),
-		new OptionCatagory("Appearance", [
+		new OptionCategory("Appearance", [
 			#if desktop
 			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
 			new RainbowFPSOption("Make the FPS Counter Rainbow (Only works with the FPS Counter toggled on and Flashing Lights toggled off)"),
@@ -46,7 +49,7 @@ class OptionsMenu extends MusicBeatState
 			#end
 		]),
 		
-		new OptionCatagory("Misc", [
+		new OptionCategory("Misc", [
 			#if desktop
 			new FPSOption("Toggle the FPS Counter"),
 			new ReplayOption("View replays"),
@@ -58,14 +61,17 @@ class OptionsMenu extends MusicBeatState
 		
 	];
 
+	public var acceptInput:Bool = true;
+
 	private var currentDescription:String = "";
 	private var grpControls:FlxTypedGroup<Alphabet>;
 	public static var versionShit:FlxText;
 
-	var currentSelectedCat:OptionCatagory;
-
+	var currentSelectedCat:OptionCategory;
+	
 	override function create()
 	{
+		instance = this;
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menuDesat"));
 
 		menuBG.color = 0xFFea71fd;
@@ -104,6 +110,8 @@ class OptionsMenu extends MusicBeatState
 	{
 		super.update(elapsed);
 
+		if (acceptInput)
+		{
 			if (controls.BACK && !isCat)
 				FlxG.switchState(new MainMenuState());
 			else if (controls.BACK)
@@ -111,18 +119,38 @@ class OptionsMenu extends MusicBeatState
 				isCat = false;
 				grpControls.clear();
 				for (i in 0...options.length)
-					{
-						var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, options[i].getName(), true, false);
-						controlLabel.isMenuItem = true;
-						controlLabel.targetY = i;
-						grpControls.add(controlLabel);
-						// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
-					}
+				{
+					var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, options[i].getName(), true, false);
+					controlLabel.isMenuItem = true;
+					controlLabel.targetY = i;
+					grpControls.add(controlLabel);
+					// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
+				}
+				
 				curSelected = 0;
+				
+				changeSelection(curSelected);
 			}
-			if (controls.UP_P)
+
+			var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
+
+			if (gamepad != null)
+			{
+				if (gamepad.justPressed.DPAD_UP)
+				{
+					FlxG.sound.play(Paths.sound('scrollMenu'));
+					changeSelection(-1);
+				}
+				if (gamepad.justPressed.DPAD_DOWN)
+				{
+					FlxG.sound.play(Paths.sound('scrollMenu'));
+					changeSelection(1);
+				}
+			}
+			
+			if (FlxG.keys.justPressed.UP)
 				changeSelection(-1);
-			if (controls.DOWN_P)
+			if (FlxG.keys.justPressed.DOWN)
 				changeSelection(1);
 			
 			if (isCat)
@@ -165,16 +193,16 @@ class OptionsMenu extends MusicBeatState
 			else
 			{
 				if (FlxG.keys.pressed.SHIFT)
-					{
-						if (FlxG.keys.justPressed.RIGHT)
-							FlxG.save.data.offset += 0.1;
-						else if (FlxG.keys.justPressed.LEFT)
-							FlxG.save.data.offset -= 0.1;
-					}
-					else if (FlxG.keys.pressed.RIGHT)
+				{
+					if (FlxG.keys.justPressed.RIGHT)
 						FlxG.save.data.offset += 0.1;
-					else if (FlxG.keys.pressed.LEFT)
+					else if (FlxG.keys.justPressed.LEFT)
 						FlxG.save.data.offset -= 0.1;
+				}
+				else if (FlxG.keys.pressed.RIGHT)
+					FlxG.save.data.offset += 0.1;
+				else if (FlxG.keys.pressed.LEFT)
+					FlxG.save.data.offset -= 0.1;
 				
 				versionShit.text = "Offset (Left, Right, Shift for slow): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
 			}
@@ -209,7 +237,10 @@ class OptionsMenu extends MusicBeatState
 						}
 					curSelected = 0;
 				}
+				
+				changeSelection();
 			}
+		}
 		FlxG.save.flush();
 	}
 
