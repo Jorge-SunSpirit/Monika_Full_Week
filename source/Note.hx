@@ -100,20 +100,41 @@ class Note extends FlxSprite
 			default:
 				frames = Paths.getSparrowAtlas('NOTE_assets');
 
-				animation.addByPrefix('greenScroll', 'green0');
-				animation.addByPrefix('redScroll', 'red0');
-				animation.addByPrefix('blueScroll', 'blue0');
-				animation.addByPrefix('purpleScroll', 'purple0');
+				switch (noteType)
+					{
+						case 2:
+							animation.addByPrefix('greenScroll', 'markov green0');
+							animation.addByPrefix('redScroll', 'markov red0');
+							animation.addByPrefix('blueScroll', 'markov blue0');
+							animation.addByPrefix('purpleScroll', 'markov purple0');
 
-				animation.addByPrefix('purpleholdend', 'pruple end hold');
-				animation.addByPrefix('greenholdend', 'green hold end');
-				animation.addByPrefix('redholdend', 'red hold end');
-				animation.addByPrefix('blueholdend', 'blue hold end');
+							animation.addByPrefix('purpleholdend', 'markov pruple end hold');
+							animation.addByPrefix('greenholdend', 'markov green hold end');
+							animation.addByPrefix('redholdend', 'markov red hold end');
+							animation.addByPrefix('blueholdend', 'markov blue hold end');
 
-				animation.addByPrefix('purplehold', 'purple hold piece');
-				animation.addByPrefix('greenhold', 'green hold piece');
-				animation.addByPrefix('redhold', 'red hold piece');
-				animation.addByPrefix('bluehold', 'blue hold piece');
+							animation.addByPrefix('purplehold', 'markov purple hold piece');
+							animation.addByPrefix('greenhold', 'markov green hold piece');
+							animation.addByPrefix('redhold', 'markov red hold piece');
+							animation.addByPrefix('bluehold', 'markov blue hold piece');
+
+						default:
+							animation.addByPrefix('greenScroll', 'green0');
+							animation.addByPrefix('redScroll', 'red0');
+							animation.addByPrefix('blueScroll', 'blue0');
+							animation.addByPrefix('purpleScroll', 'purple0');
+
+							animation.addByPrefix('purpleholdend', 'pruple end hold');
+							animation.addByPrefix('greenholdend', 'green hold end');
+							animation.addByPrefix('redholdend', 'red hold end');
+							animation.addByPrefix('blueholdend', 'blue hold end');
+
+							animation.addByPrefix('purplehold', 'purple hold piece');
+							animation.addByPrefix('greenhold', 'green hold piece');
+							animation.addByPrefix('redhold', 'red hold piece');
+							animation.addByPrefix('bluehold', 'blue hold piece');
+
+					}
 
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
@@ -200,33 +221,40 @@ class Note extends FlxSprite
 		super.update(elapsed);
 
 		if (mustPress)
-			{
-				switch (noteType)
-					{
-						case 2:
-							{
-								if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * .3) && strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * .2))
-									canBeHit = true;
-								else
-									canBeHit = false;
-	
-								if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset * Conductor.timeScale && !wasGoodHit)
-									tooLate = true;
-							}
-						default:
-							{
-								// The * 0.5 is so that it's easier to hit them too late, instead of too early
-								if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * 1.5) && strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.5))
-									canBeHit = true;
-								else
-									canBeHit = false;
-	
-								if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset * Conductor.timeScale && !wasGoodHit)
-									tooLate = true;
-							}
-					}
-				
-			}
+		{
+			switch (noteType)
+				{
+					case 2:
+						{
+							if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * .3) && strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * .2))
+								canBeHit = true;
+							else
+								canBeHit = false;
+
+							if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset * Conductor.timeScale && !wasGoodHit)
+								tooLate = true;
+						}
+					default:
+						{
+							// The * 0.5 is so that it's easier to hit them too late, instead of too early
+							if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * 1.5) && strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.5))
+								canBeHit = true;
+							else
+								canBeHit = false;
+
+							if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset * Conductor.timeScale && !wasGoodHit)
+								tooLate = true;
+						}
+				}
+			
+		}
+		else
+		{
+			canBeHit = false;
+
+			if (strumTime <= Conductor.songPosition)
+				wasGoodHit = true;
+		}
 
 		if (tooLate)
 		{
