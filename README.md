@@ -10,7 +10,7 @@ DDLC Links: **[DDLC Official Webiste](http://ddlc.moe) ⋅ [itch.io page](https:
 # Credits
 
 ### Monika Full Week
-- [AetherDX](https://twitter.com/AetherDX) and [Jorge_SunSpirit](https://twitter.com/Jorge_SunSpirit) - Programming
+- [Jorge_SunSpirit](https://twitter.com/Jorge_SunSpirit) - Programming
 - [SirDusterBuster](https://twitter.com/SirDusterBuster) and [TokyoGalaxyOG](https://twitter.com/TokyoGalaxyOG) - Art
 - [CelShader](https://www.youtube.com/channel/UCm3eGs2etEOMzRX0iQ4QzqQ) and [Kallionic](https://youtube.com/kallionic) - Music
 
