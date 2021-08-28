@@ -36,13 +36,13 @@ class CreditDevMenu extends MusicBeatState
 	var fixdiff:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['duster', 'Tokyo', 'aether', 'Jorge', 'celeste', 'new'];
+	var optionShit:Array<String> = ['duster', 'Tokyo', 'Jorge', 'celeste', 'new'];
 	#else
 	var optionShit:Array<String> = ['duster'];
 	#end
 
 	#if !switch
-	var creditshit:Array<String> = ['icond', 'icont', 'icona', 'iconj', 'iconc', 'iconnew'];
+	var creditshit:Array<String> = ['icond', 'icont', 'iconj', 'iconc', 'iconnew'];
 	#else
 	var creditshit:Array<String> = ['icond'];
 	#end
@@ -221,23 +221,6 @@ class CreditDevMenu extends MusicBeatState
 					#else
 					FlxG.openURL('https://twitter.com/TokyoGalaxyOG');
 					#end
-				case 'aether':
-					if (FlxG.keys.pressed.G)
-						{
-							#if linux
-							Sys.command('/usr/bin/xdg-open', ["https://www.youtube.com/watch?v=EHAj5-u8qpc", "&"]);
-							#else
-							FlxG.openURL('https://www.youtube.com/watch?v=EHAj5-u8qpc');
-							#end
-						}
-					else
-						{
-							#if linux
-							Sys.command('/usr/bin/xdg-open', ["https://twitter.com/AetherDX", "&"]);
-							#else
-							FlxG.openURL('https://twitter.com/AetherDX');
-							#end
-						}	
 				case 'Jorge':
 					if (FlxG.keys.pressed.G)
 						{
@@ -275,10 +258,10 @@ class CreditDevMenu extends MusicBeatState
 		{
 			curSelected += huh;
 
-			if (curSelected >= 6)
+			if (curSelected >= 5)
 				curSelected = 0;
 			if (curSelected < 0)
-				curSelected = 6 - 1;
+				curSelected = 5 - 1;
 				
 			menuItems.forEach(function(spr:FlxSprite)
 			{
