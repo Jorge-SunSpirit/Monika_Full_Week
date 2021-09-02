@@ -361,21 +361,21 @@ class PlayState extends MusicBeatState
 					"Only then I will even CONSIDER letting you\ndate my daughter!"
 				];
 			case 'senpai':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('senpai/senpaiDialogue'));
+				dialogue = CoolUtil.coolTextFile(Paths.txt('data/senpai/senpaiDialogue'));
 			case 'roses':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('roses/rosesDialogue'));
+				dialogue = CoolUtil.coolTextFile(Paths.txt('data/roses/rosesDialogue'));
 			case 'thorns':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('thorns/thornsDialogue'));
+				dialogue = CoolUtil.coolTextFile(Paths.txt('data/thorns/thornsDialogue'));
 		    case 'high school conflict':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('high school conflict/high-school-conflictDialogue'));
-				extra3 = CoolUtil.coolTextFile(Paths.txt('high school conflict/high-school-conflictEndDialogue')); 
+				dialogue = CoolUtil.coolTextFile(Paths.txt('data/high school conflict/high-school-conflictDialogue'));
+				extra3 = CoolUtil.coolTextFile(Paths.txt('data/high school conflict/high-school-conflictEndDialogue')); 
 			case 'bara no yume':
-				extra1 = CoolUtil.coolTextFile(Paths.txt('bara no yume/bara no yume-Dialogue'));
-				extra3 = CoolUtil.coolTextFile(Paths.txt('bara no yume/bara no yume-EndDialogue')); 
+				extra1 = CoolUtil.coolTextFile(Paths.txt('data/bara no yume/bara no yume-Dialogue'));
+				extra3 = CoolUtil.coolTextFile(Paths.txt('data/bara no yume/bara no yume-EndDialogue')); 
 			case 'your demise':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('your demise/your-demiseDialogue'));
-				extra2 = CoolUtil.coolTextFile(Paths.txt('your demise/your-demiseEndDialogue'));
-				extra3 = CoolUtil.coolTextFile(Paths.txt('your demise/FinalCutsceneDialouge'));
+				dialogue = CoolUtil.coolTextFile(Paths.txt('data/your demise/your-demiseDialogue'));
+				extra2 = CoolUtil.coolTextFile(Paths.txt('data/your demise/your-demiseEndDialogue'));
+				extra3 = CoolUtil.coolTextFile(Paths.txt('data/your demise/FinalCutsceneDialouge'));
 		}
 
 		trace(SONG.stage);
@@ -2015,12 +2015,7 @@ class PlayState extends MusicBeatState
 		}
 
 		if (FlxG.keys.justPressed.NINE)
-		{
-			if (iconP1.animation.curAnim.name == 'bf-old')
-				iconP1.animation.play(SONG.player1);
-			else
-				iconP1.animation.play('bf-old');
-		}
+			iconP1.swapOldIcon();
 
 		if (FlxG.keys.pressed.O && FlxG.keys.pressed.P)
 			{

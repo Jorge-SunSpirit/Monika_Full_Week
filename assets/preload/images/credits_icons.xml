@@ -2,21 +2,6 @@
 <TextureAtlas imagePath="credits_icons.png">
 	<!-- Created with Adobe Animate version 20.0.3.25487 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="icona basic0000" x="0" y="0" width="82" height="87"/>
-	<SubTexture name="icona basic0001" x="87" y="0" width="82" height="87"/>
-	<SubTexture name="icona basic0002" x="87" y="0" width="82" height="87"/>
-	<SubTexture name="icona basic0003" x="87" y="0" width="82" height="87"/>
-	<SubTexture name="icona basic0004" x="87" y="0" width="82" height="87"/>
-	<SubTexture name="icona white0000" x="174" y="0" width="1111" height="1069" frameX="-39" frameY="-41" frameWidth="1189" frameHeight="1152"/>
-	<SubTexture name="icona white0001" x="174" y="0" width="1111" height="1069" frameX="-39" frameY="-41" frameWidth="1189" frameHeight="1152"/>
-	<SubTexture name="icona white0002" x="174" y="0" width="1111" height="1069" frameX="-39" frameY="-41" frameWidth="1189" frameHeight="1152"/>
-	<SubTexture name="icona white0003" x="174" y="0" width="1111" height="1069" frameX="-39" frameY="-41" frameWidth="1189" frameHeight="1152"/>
-	<SubTexture name="icona white0004" x="174" y="0" width="1111" height="1069" frameX="-39" frameY="-41" frameWidth="1189" frameHeight="1152"/>
-	<SubTexture name="icona white0005" x="1290" y="0" width="1189" height="1152"/>
-	<SubTexture name="icona white0006" x="1290" y="0" width="1189" height="1152"/>
-	<SubTexture name="icona white0007" x="1290" y="0" width="1189" height="1152"/>
-	<SubTexture name="icona white0008" x="1290" y="0" width="1189" height="1152"/>
-	<SubTexture name="icona white0009" x="1290" y="0" width="1189" height="1152"/>
 	<SubTexture name="iconc basic0000" x="2484" y="0" width="82" height="87"/>
 	<SubTexture name="iconc basic0001" x="2571" y="0" width="82" height="87"/>
 	<SubTexture name="iconc basic0002" x="2571" y="0" width="82" height="87"/>
